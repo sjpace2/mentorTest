@@ -1,22 +1,51 @@
 //JS Basics
 //Run npm test in the command line to test your solutions
 module.exports = {
-  // reverseIt:
+  reverseIt: string => {
+    return string.split('').reverse().join('') 
+  },
 
   //uncomment and finish the reverseIt function. It will take in one parameter which is a String and
   //reverse it
 
-  // removeDups:
+  removeDups: arr => {
+    let filteredArray = arr.filter((el, i)=>{
+      return arr.indexOf(el) === i
+    })
+    return filteredArray
+  },
 
   //uncomment and finish the removeDups function. It will take in one parameter which is an Array
   //remove all duplicates
 
-  // titleIt:
+  titleIt: (str) => {
+    let strArr = str.split(" ")
+    let lettArr = strArr.map(str => {
+      return str.split("")
+    })
+    let capArr = lettArr.map(lett => {
+     let upper = lett[0].toUpperCase()
+      let newLett = lett.splice(0, 1, upper)
+     return lett.join("")
+    })
+  return capArr.join(" ")
+  
+  },
 
   //uncomment and finish the titleIt function. It will take in one parameter which is a String and
   //capitalize the first letter of each word
 
-  // vowelCounter:
+  vowelCounter: (str) => {
+  
+    let lower = str.toLowerCase()
+    let count = 0
+    for(let i=0; i<lower.length; i++){
+      if(lower.charAt(i) ===  'a' || lower.charAt(i) ===  'e' || lower.charAt(i) ===  'i' || lower.charAt(i) ===  'o' || lower.charAt(i) ===  'u'    ){
+        count++
+      }
+    }
+    return count
+  }
 
   //uncomment and finish the vowelCounter function. It will take in one parameter which is a String and
   //return the number of vowels in the string
